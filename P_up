@@ -1,0 +1,10 @@
+# define a function that compute the P_up 
+# if N is the total number of spikes and P_up= [p1,p2,...pN]gathers the probabilitys of Si=1.
+# this function is mainly based on the transition function(essentially, sum of transiton prob.)
+# the input x is a spike time train.
+def prob_up(x):
+    prob_up =0
+    for k in range(0,len(x)):
+    prob_up = prob_up+# P(x[k]|x1)   
+    return prob_up
+
