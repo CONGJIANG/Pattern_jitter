@@ -1,0 +1,15 @@
+import numpy as np
+T = 1000; #length of train
+spikeTrain = np.zeros(T)
+fRate = 30.
+binprob = (1./T)*fRate
+for k in range(0,int(T)):
+    coin = np.random.uniform()
+    if coin < binprob:
+        spikeTrain[k] = 1
+        
+obs_x = np.where(spikeTrain==1)
+print("Obs_x",obs_x)
+obs_x = np.array(obs_x)
+obs_x = obs_x.flatten()
+len(obs_x)
