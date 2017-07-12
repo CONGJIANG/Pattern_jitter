@@ -1,0 +1,10 @@
+# for basis case
+# find P(S1=1) = P(X1=x1), where x1 can be any of these fixed spike time.
+S1_1=0
+for k in range(0,len(obs_x)):
+    #print(k,obs_x[k])  
+    #here we can use obs_x[k] to compute the P(X1=x1)
+    S1_1 += # obs_x[k]
+
+print("S1=1",S1_1)
+print("S1=0",S1_0)
