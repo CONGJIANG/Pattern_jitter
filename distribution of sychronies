@@ -1,0 +1,18 @@
+# if N is the total number of spikes and P= [p1,p2,...pN]gathers the probabilitys of Si=1.
+##Distribution
+# Use the matrix to computer the distribution of S[j][l]= P( sum_{k= 0}^{j} s_k = l); careful!!
+S =np.zeros((N+1,N+1))  # here S is n+1*n+1 matrix
+#initialisation
+S[0][0]=1
+#for the bottom of figure, i.e. all sychonies are 0
+for j in range(1,N+1):
+    S[j][0] = S[j-1][0]*(1-P[j-1])
+#for the up bound of figure, i.e. all spike times are sychonous.    
+for j in range(1,N+1):
+    S[j][j]=S[j-1][j-1]*P[j-1]
+#Recursive compution
+for j in range(1,N+1):
+    for l in range(1,j):
+        p=P[j-1]
+        S[j][l]=S[j-1][l-1]*p+S[j-1][l]*(1-p)
+print(S)
